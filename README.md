@@ -1,1 +1,22 @@
 # SQL-project
+
+SELECT 
+cust.acctnum
+,count(cust.order_ID) as Orders
+,Feb.Product
+,Feb.Quantity
+,Feb.price
+,Feb.orderdate
+,Feb.location
+FROM BIT_DB.customers cust
+
+INNER JOIN BIT_DB.FebSales Feb
+ON cust.order_id=FEB.orderid
+
+GROUP BY 
+cust.acctnum
+,Feb.Product
+,Feb.Quantity
+,Feb.price
+,Feb.orderdate
+,Feb.location
